@@ -1,6 +1,5 @@
 package com.nastyair.ai;
 
-import dev.langchain4j.agent.tool.Tool;
 import dev.langchain4j.agent.tool.ToolSpecification;
 import dev.langchain4j.mcp.McpToolProvider;
 import dev.langchain4j.mcp.client.DefaultMcpClient;
@@ -12,13 +11,13 @@ import dev.langchain4j.model.ollama.OllamaChatModel;
 import dev.langchain4j.service.AiServices;
 
 import java.util.List;
-import java.util.Map;
 
 public class LLM {
     // Ollama 配置
     private static final String OLLAMA_BASE_URL = "http://localhost:11434";
     private static final String OLLAMA_MODEL_NAME = "qwen3:1.7b";
-    private static final String JarPath = "/Volumes/Seagate1T/javaProject/ai/mcp-person-server/target/mcp-person-server-0.0.1-SNAPSHOT.jar";
+    private static final String JAR_PATH = "/Volumes/Seagate1T/javaProject/ai/mcp-person-server/target/mcp-person-server-0.0.1-SNAPSHOT.jar";
+    private static final String JAVA_PATH = "/Volumes/Seagate1T/sdk/jdk-24.0.1.jdk/Contents/Home/bin/java";
 
     public static void main(String[] args) throws Exception {
         ChatModel model = OllamaChatModel.builder()
@@ -30,11 +29,11 @@ public class LLM {
                 .build();
         McpTransport transport = new StdioMcpTransport.Builder()
                 .command(List.of(
-                        "/Volumes/Seagate1T/sdk/jdk-24.0.1.jdk/Contents/Home/bin/java",
+                        JAVA_PATH,
                         "-Dspring.ai.mcp.server.stdio=true",
                         "-Dlogging.pattern.console=",
                         "-jar",
-                        JarPath))
+                        JAR_PATH))
                 .logEvents(true)
                 .build();
         McpClient mcpClient = new DefaultMcpClient.Builder()
