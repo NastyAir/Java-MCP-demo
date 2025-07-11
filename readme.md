@@ -41,7 +41,7 @@ https://ollama.com/
 
 # 运行
 1. 启动ollama服务
-2. build [mcp-person-server](../mcp-person-server)项目为jar包
-3. 修改[ai-agent](../ai-agent)项目中[LLM.java](src/main/java/com/nastyair/ai/LLM.java) 的**jar**包路径(JAR_PATH)为你的本地路径
-4. 修改[ai-agent](../ai-agent)项目中[LLM.java](src/main/java/com/nastyair/ai/LLM.java) 的**Java**路径(JAVA_PATH)为你的本地路径
-5. 运行[ai-agent](../ai-agent)项目中[LLM.java](src/main/java/com/nastyair/ai/LLM.java)
+2. build [mcp-person-server](mcp-person-server)项目为jar包
+3. 修改[ai-agent](ai-agent)项目中[LLM.java](ai-agent/src/main/java/com/nastyair/ai/LLM.java) 的**jar**包路径(JAR_PATH)为你的本地路径
+4. 修改[ai-agent](ai-agent)项目中[LLM.java](ai-agent/src/main/java/com/nastyair/ai/LLM.java) 的**Java**路径(JAVA_PATH)为你的本地路径
+5. 运行[ai-agent](ai-agent)项目中[LLM.java](ai-agent/src/main/java/com/nastyair/ai/LLM.java)
